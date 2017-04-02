@@ -11,7 +11,10 @@
     "codegen": "ngc",
     "build2": "webpack --config webpack.config.js",
     "build2:prod": "webpack -p --progress --config webpack.config.js --env.MODE=prod",
-    "ngc": "ngc -p tsconfig.aot.json"
+    "ngc": "ngc -p tsconfig.aot.json",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve2\"",
+    "build:watch": "tsc -p src/ -w",
+    "serve2": "lite-server -c=bs-config.json"
   },
   "keywords": [],
   "author": "",
